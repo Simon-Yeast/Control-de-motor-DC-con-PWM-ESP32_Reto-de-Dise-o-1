@@ -102,10 +102,10 @@ Los optoacopladores separan eléctricamente el ESP32 de la etapa de potencia, ev
 
 **Notas de diseño:**
 
-El sistema evita la inversión instantánea del motor para prevenir sobrecorrientes y esfuerzos mecánicos. Se implementa una pausa antes de cambiar el sentido de giro.
+- El sistema evita la inversión instantánea del motor para prevenir sobrecorrientes y esfuerzos mecánicos. Se implementa una pausa antes de cambiar el sentido de giro.
 
-El control de velocidad se realiza mediante PWM a 12 bits, permitiendo una regulación fina de la potencia aplicada.
+- El control de velocidad se realiza mediante PWM a 12 bits, permitiendo una regulación fina de la potencia aplicada.
 
-La visualización se realiza por multiplexación de los tres displays, manteniendo una frecuencia suficiente para evitar parpadeo visible.
+- La visualización se realiza por multiplexación de los tres displays, manteniendo una frecuencia suficiente para evitar parpadeo visible.
 
 
