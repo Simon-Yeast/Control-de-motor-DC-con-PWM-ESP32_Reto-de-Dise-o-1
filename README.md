@@ -1,8 +1,11 @@
-**Agitador de Muestras con ESP32 — Control de Motor DC con Puente H**
-Sistema embebido implementado en C puro con ESP-IDF para el control de un agitador de muestras de laboratorio. Permite regular la velocidad, cambiar el sentido de giro y visualizar el porcentaje de potencia en displays de 7 segmentos. Sin librerías de terceros.
+# Agitador de Muestras con ESP32 — Control de Motor DC
 
-**Hardware
-**
+Implementación de un sistema embebido para el control de un agitador de laboratorio usando un motor DC de 12V. Permite ajustar la velocidad, seleccionar el sentido de giro y visualizar el porcentaje de potencia en displays de 7 segmentos. Desarrollado en C con ESP-IDF, sin librerías externas.
+
+---
+
+## Hardware requerido
+
 ESP32 DevKit1
 Motor DC 12V / 2A1
 MOSFET IRFZ44N (canal N)2
