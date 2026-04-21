@@ -6,16 +6,20 @@ Implementación de un sistema embebido para el control de un agitador de laborat
 
 ## Hardware requerido
 
-ESP32 DevKit1
-Motor DC 12V / 2A1
-MOSFET IRFZ44N (canal N)2
-MOSFET IRF9630 (canal P)2
-Optoacopladores 4N354
-Displays 7 segmentos1×3 dígitos
-Potenciómetro10kΩ1
-Pulsadores2
-LEDs (rojo y verde)2
-Resistencias y protoboard—
+| Componente | Cantidad |
+|---|---|
+| ESP32 DevKit | 1 |
+| Motor DC 12V / 2A | 1 |
+| MOSFET IRFZ44N (canal N) | 2 |
+| MOSFET IRF9630 (canal P) | 2 |
+| Optoacopladores 4N35 | 4 |
+| Displays 7 segmentos (3 dígitos) | 1 |
+| Potenciómetro 10kΩ | 1 |
+| Pulsadores | 2 |
+| LEDs (rojo y verde) | 2 |
+| Resistencias y protoboard | — |
+
+---
 
 **Interfaz de usuario**
 Potenciómetro: control de velocidad (0–100%)
