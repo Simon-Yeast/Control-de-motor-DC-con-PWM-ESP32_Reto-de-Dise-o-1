@@ -1,2 +1,47 @@
-# Control-de-motor-DC-con-PWM-ESP32_Reto-de-Dise-o-1
-Se desarrolló un sistema embebido para controlar un agitador de muestras mediante un motor DC, permitiendo ajustar la potencia con un potenciómetro, seleccionar el sentido de giro con pulsadores y visualizar el porcentaje de operación en displays de 7 segmentos, garantizando control seguro y preciso.
+**Agitador de Muestras con ESP32 — Control de Motor DC con Puente H**
+Sistema embebido implementado en C puro con ESP-IDF para el control de un agitador de muestras de laboratorio. Permite regular la velocidad, cambiar el sentido de giro y visualizar el porcentaje de potencia en displays de 7 segmentos. Sin librerías de terceros.
+
+**Hardware
+**
+ESP32 DevKit1
+Motor DC 12V / 2A1
+MOSFET IRFZ44N (canal N)2
+MOSFET IRF9630 (canal P)2
+Optoacopladores 4N354
+Displays 7 segmentos1×3 dígitos
+Potenciómetro10kΩ1
+Pulsadores2
+LEDs (rojo y verde)2
+Resistencias y protoboard—
+
+**Interfaz de usuario**
+Potenciómetro: control de velocidad (0–100%)
+Pulsadores: selección de sentido de giro
+LED verde: indica un sentido de giro
+LED rojo: indica el sentido contrario
+Displays: muestran el porcentaje de potencia aplicado
+
+**Arquitectura del sistema**
+main.c
+├── Inicialización de GPIO, ADC y PWM (LEDC)
+├── Lectura ADC (potenciómetro) y escalamiento a porcentaje
+├── Generación de señal PWM para control de velocidad
+├── Lógica de control de dirección con protección
+├── Multiplexación de displays de 7 segmentos
+└── Loop principal con tareas concurrentes
+
+**Etapa de potencia**
+El control del motor se realiza mediante un puente H discreto:
+
+High-side: MOSFET canal P IRF9630
+Low-side: MOSFET canal N IRFZ44N
+Aislamiento: optoacopladores 4N35
+
+Los optoacopladores separan eléctricamente el ESP32 de la etapa de potencia, evitando daños por ruido, picos de voltaje o transientes generados por el motor de 12V.
+
+Notas de diseño
+El sistema evita la inversión instantánea del motor para prevenir sobrecorrientes y esfuerzos mecánicos. Se implementa una pausa antes de cambiar el sentido de giro.
+
+El control de velocidad se realiza mediante PWM a 12 bits, permitiendo una regulación fina de la potencia aplicada.
+
+La visualización se realiza por multiplexación de los tres displays, manteniendo una frecuencia suficiente para evitar parpadeo visible.
