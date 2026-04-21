@@ -110,23 +110,11 @@ Los optoacopladores separan eléctricamente el ESP32 de la etapa de potencia, ev
 
 - La visualización se realiza por multiplexación de los tres displays, manteniendo una frecuencia suficiente para evitar parpadeo visible.
 
-´´´
+```
    |\---/|
    | ,_, |
     \_`_/-..----.
  ___/ `   ' ,""+ \  
 (__...'   __\    |`.___.';
   (_,...'(_,.`__)/'.....+
-´´´
 ```
-tetris_esp32/
-├── platformio.ini
-└── src/
-    └── main.c
-```
-  _______  __  .___________. __    __   __    __  .______  
- /  _____||  | |           ||  |  |  | |  |  |  | |   _  \ 
-|  |  __  |  | `---|  |----`|  |__|  | |  |  |  | |  |_)  |
-|  | |_ | |  |     |  |     |   __   | |  |  |  | |   _  < 
-|  |__| | |  |     |  |     |  |  |  | |  `--'  | |  |_)  |
- \______| |__|     |__|     |__|  |__|  \______/  |______/ 
