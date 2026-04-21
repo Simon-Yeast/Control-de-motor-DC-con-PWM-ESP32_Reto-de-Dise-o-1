@@ -93,7 +93,9 @@ main.c
 El control del motor se realiza mediante un puente H discreto:
 
 High-side: MOSFET canal P IRF9630
+
 Low-side: MOSFET canal N IRFZ44N
+
 Aislamiento: optoacopladores 4N35
 
 Los optoacopladores separan eléctricamente el ESP32 de la etapa de potencia, evitando daños por ruido, picos de voltaje o transientes generados por el motor de 12V.
