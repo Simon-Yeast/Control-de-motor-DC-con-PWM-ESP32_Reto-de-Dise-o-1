@@ -21,14 +21,17 @@ Implementación de un sistema embebido para el control de un agitador de laborat
 
 ---
 
-**Interfaz de usuario**
+## Interfaz de usuario
+
 Potenciómetro: control de velocidad (0–100%)
 Pulsadores: selección de sentido de giro
 LED verde: indica un sentido de giro
 LED rojo: indica el sentido contrario
 Displays: muestran el porcentaje de potencia aplicado
 
-**Arquitectura del sistema**
+---
+
+## Arquitectura del sistema
 main.c
 ├── Inicialización de GPIO, ADC y PWM (LEDC)
 ├── Lectura ADC (potenciómetro) y escalamiento a porcentaje
@@ -36,6 +39,55 @@ main.c
 ├── Lógica de control de dirección con protección
 ├── Multiplexación de displays de 7 segmentos
 └── Loop principal con tareas concurrentes
+
+---
+
+## Asignación de pines
+
+### Displays 7 segmentos
+| GPIO | Segmento |
+|------|----------|
+| 13 | A |
+| 12 | B |
+| 14 | C |
+| 27 | D |
+| 26 | E |
+| 25 | F |
+| 33 | G |
+
+### Selección de dígitos
+| GPIO | Dígito |
+|------|--------|
+| 21 | Centenas |
+| 22 | Decenas |
+| 23 | Unidades |
+
+### Entradas
+| GPIO | Función |
+|------|---------|
+| 4 | Giro sentido A |
+| 5 | Giro sentido B |
+
+### Indicadores
+| GPIO | Función |
+|------|---------|
+| 18 | LED verde |
+| 19 | LED rojo |
+
+### Etapa de potencia
+| GPIO | Función |
+|------|---------|
+| 32 | High-side izquierdo |
+| 16 | PWM bajo izquierdo |
+| 17 | High-side derecho |
+| 15 | PWM bajo derecho |
+
+### ADC
+| Canal | Función |
+|-------|--------|
+| ADC1_CH6 | Potenciómetro |
+
+---
 
 **Etapa de potencia**
 El control del motor se realiza mediante un puente H discreto:
@@ -52,3 +104,5 @@ El sistema evita la inversión instantánea del motor para prevenir sobrecorrien
 El control de velocidad se realiza mediante PWM a 12 bits, permitiendo una regulación fina de la potencia aplicada.
 
 La visualización se realiza por multiplexación de los tres displays, manteniendo una frecuencia suficiente para evitar parpadeo visible.
+
+
