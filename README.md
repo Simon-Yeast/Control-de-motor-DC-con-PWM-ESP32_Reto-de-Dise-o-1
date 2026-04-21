@@ -118,7 +118,12 @@ Los optoacopladores separan eléctricamente el ESP32 de la etapa de potencia, ev
 (__...'   __\    |`.___.';
   (_,...'(_,.`__)/'.....+
 ´´´
-
+```
+tetris_esp32/
+├── platformio.ini
+└── src/
+    └── main.c
+```
   _______  __  .___________. __    __   __    __  .______  
  /  _____||  | |           ||  |  |  | |  |  |  | |   _  \ 
 |  |  __  |  | `---|  |----`|  |__|  | |  |  |  | |  |_)  |
