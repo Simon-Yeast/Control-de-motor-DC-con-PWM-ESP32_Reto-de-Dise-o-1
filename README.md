@@ -89,7 +89,7 @@ main.c
 
 ---
 
-**Etapa de potencia**
+## Etapa de potencia
 El control del motor se realiza mediante un puente H discreto:
 
 High-side: MOSFET canal P IRF9630
@@ -98,7 +98,9 @@ Aislamiento: optoacopladores 4N35
 
 Los optoacopladores separan eléctricamente el ESP32 de la etapa de potencia, evitando daños por ruido, picos de voltaje o transientes generados por el motor de 12V.
 
-Notas de diseño
+---
+
+**Notas de diseño**
 El sistema evita la inversión instantánea del motor para prevenir sobrecorrientes y esfuerzos mecánicos. Se implementa una pausa antes de cambiar el sentido de giro.
 
 El control de velocidad se realiza mediante PWM a 12 bits, permitiendo una regulación fina de la potencia aplicada.
