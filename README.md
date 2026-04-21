@@ -110,4 +110,12 @@ Los optoacopladores separan eléctricamente el ESP32 de la etapa de potencia, ev
 
 - La visualización se realiza por multiplexación de los tres displays, manteniendo una frecuencia suficiente para evitar parpadeo visible.
 
+´´´
+   |\---/|
+   | ,_, |
+    \_`_/-..----.
+ ___/ `   ' ,""+ \  
+(__...'   __\    |`.___.';
+  (_,...'(_,.`__)/'.....+
 
+´´´
